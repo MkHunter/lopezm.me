@@ -15,12 +15,18 @@ const LayoutWrapper = ({ children }) => {
           <div>
             <Link href="/" aria-label="Tailwind CSS Blog">
               <div className="flex items-center justify-between">
+                {/* //Space for logo
                 <div className="mr-3">
                   <Logo />
                 </div>
-                {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 text-2xl font-semibold sm:block">
-                    {siteMetadata.headerTitle}
+                */}
+                {typeof siteMetadata.headerTitle[0] === 'string' ? (
+                  <div className="text-4xl font-bold sm:block">
+                    {siteMetadata.headerTitle[0]}
+                    <span className="-mx-1 text-5xl bg-clip-text text-transparent bg-gradient-to-tr from-green-400 to-blue-500">
+                      {siteMetadata.headerTitle[1]}
+                    </span>
+                    {siteMetadata.headerTitle[2]}
                   </div>
                 ) : (
                   siteMetadata.headerTitle
